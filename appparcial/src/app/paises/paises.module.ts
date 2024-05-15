@@ -4,6 +4,7 @@ import { PaisesComponent } from './paises.component';
 import { RouterModule } from '@angular/router';
 import { PaisesListComponent } from './paises-list/paises-list.component';
 import { PaisesDetailComponent } from './paises-detail/paises-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,7 +15,7 @@ import { PaisesDetailComponent } from './paises-detail/paises-detail.component';
     PaisesDetailComponent
   ],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, HttpClientModule
   ],
 
   exports: [PaisesListComponent, PaisesDetailComponent]
