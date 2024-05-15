@@ -38,7 +38,7 @@ export class PaisesListComponent implements OnInit{
     let max= 2024;
     let nombrePais = "";
     for (let c of this.paises) {
-      if (c.formation_year > max) {
+      if (c.formation_year < max) {
         max = c.formation_year;
         nombrePais = c.name;
       }
