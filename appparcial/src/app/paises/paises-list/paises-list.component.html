@@ -1,1 +1,46 @@
-<p>paises-list works!</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <h2>Lista Paises</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="h3">Id</th>
+              <th class="h3">Nombre</th>
+              <th class="h3">Idioma Oficial</th>
+              <th class="h3">Capital</th>
+              <th class="h3">Año de conformación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of paises">
+              <td>
+                <dd>{{ p.id }}</dd>
+              </td>
+              <td>
+                <dd>IDIOMA</dd>
+              </td>
+              <td>
+                <dd (click)="onSelected(p)">{{ p.name }}</dd>
+              </td>
+              <td>
+                <dd>{{ p.capital }}</dd>
+              </td>
+              <td>
+                <dd>{{ p.formation_year }}</dd>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- <div class="container-fluid">
+          <p>Average Seasons: {{ averageSeasons }}</p>
+        </div>
+      </div> -->
+      <!-- <div class="col-6">
+        <div *ngIf="selected">
+          <app-paises-detail [paisesDetail]="selectedPais"></app-paises-detail>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  

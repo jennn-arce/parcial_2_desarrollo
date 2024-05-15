@@ -7,6 +7,7 @@ import { Paises } from '../paises';
   templateUrl: './paises-list.component.html',
   styleUrl: './paises-list.component.css'
 })
+
 export class PaisesListComponent implements OnInit{
 
   paises: Array<Paises> = [];
@@ -14,20 +15,48 @@ export class PaisesListComponent implements OnInit{
   selectedPais!: Paises;
   p: number = 1;
   searchedPais: any;
+  paisMasViejo: number = 0;
+  nombrePaisViejo: string = "";
 
   constructor(private paisesService: PaisesService) { }
 
-  getBooks(): void {
-    this.paisesService.getPaises().subscribe({next: apiData => this.paises = apiData , error: e => console.error(e)});
+  getPaises(): void{
+    this.paisesService.getPaises().subscribe((paises) => {
+      this.paises = paises;
+    });
   }
 
-  onSelected(pais: Paises): void {
+  getPaisesList() {
+    this.paisesService.getPaises().subscribe(paises => {
+      this.paises = paises;
+      this.calculateMaximo();
+    });
+  }
+
+  calculateMaximo() {
+    let total= 0;
+    let max= 2024;
+    let nombrePais = "";
+    for (let c of this.paises) {
+      if (c.formation_year > max) {
+        max = c.formation_year;
+        nombrePais = c.name;
+      }
+
+      }
+
+    this.paisMasViejo = max;
+    this.nombrePaisViejo = nombrePais;
+  }
+
+  onSelected(pais: Paises): void{
     this.selected = true;
     this.selectedPais = pais;
   }
 
   ngOnInit() {
-    this.getBooks();
+    this.getPaises();
+    this.getPaisesList();
   }
 
 }

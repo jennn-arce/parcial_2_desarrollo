@@ -1,1 +1,33 @@
-<p>paises works!</p>
+<div class="container-fluid">
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="h4">Id</th>
+            <th class="h4">Name</th>
+            <th class="h4">Capital</th>
+            <th class="h4">Año</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of paises">
+            <td>
+              <dd>{{ p.id }}</dd>
+            </td>
+            <td>
+              <dd (click)="onSelected(p)">{{ p.name }}</dd>
+            </td>
+            <td>
+              <dd>{{ p.capital }}</dd>
+            </td>
+            <td>
+              <dd>{{ p.formation_year }}</dd>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div class="container-fluid">
+        <p>Año más viejo: {{ pais }}</p>
+      </div> -->
+    </div>
+  </div>
