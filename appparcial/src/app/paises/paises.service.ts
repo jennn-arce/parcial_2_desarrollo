@@ -14,7 +14,7 @@ export class PaisesService {
     providedIn: 'root'
   })
  
-  private apiUrl = environment.baseUrl + 'series.json';
+  private apiUrl = environment.baseUrl ;
   constructor(private http: HttpClient) { }
 
   getPaises(): Observable<Paises[]>{
