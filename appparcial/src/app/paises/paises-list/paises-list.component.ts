@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaisesService } from '../paises.service';
+import { Paises } from '../paises';
 
 @Component({
   selector: 'app-paises-list',
@@ -8,9 +9,9 @@ import { PaisesService } from '../paises.service';
 })
 export class PaisesListComponent implements OnInit{
 
-  paises: Array<PaisesDetail> = [];
+  paises: Array<Paises> = [];
   selected: boolean = false;
-  selectedPais!: PaisesDetail;
+  selectedPais!: Paises;
   p: number = 1;
   searchedPais: any;
 
@@ -20,7 +21,7 @@ export class PaisesListComponent implements OnInit{
     this.paisesService.getPaises().subscribe({next: apiData => this.paises = apiData , error: e => console.error(e)});
   }
 
-  onSelected(pais: PaisesDetail): void {
+  onSelected(pais: Paises): void {
     this.selected = true;
     this.selectedPais = pais;
   }
