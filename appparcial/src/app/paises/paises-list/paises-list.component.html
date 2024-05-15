@@ -7,7 +7,6 @@
             <tr>
               <th class="h3">Id</th>
               <th class="h3">Nombre Pais</th>
-              <th class="h3">Idioma Oficial</th>
               <th class="h3">Capital</th>
               <th class="h3">Año de conformación</th>
             </tr>
@@ -16,9 +15,6 @@
             <tr *ngFor="let p of paises">
               <td>
                 <dd>{{ p.id }}</dd>
-              </td>
-              <td>
-                <dd>IDIOMA</dd>
               </td>
               <td>
                 <dd (click)="onSelected(p)">{{ p.name }}</dd>
