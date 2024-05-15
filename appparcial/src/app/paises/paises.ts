@@ -2,7 +2,7 @@ export class Paises {
     id: number;
     name: string;
     formation_year: number;
-    official_language: string;
+    //official_language: string;
     capital:string;
     description: string;
     flag: string;
@@ -11,7 +11,7 @@ export class Paises {
         id: number,
         name: string,
         formation_year: number,
-        official_language: string,
+        //official_language: string,
         capital:string,
         description: string,
         flag: string)
@@ -19,7 +19,7 @@ export class Paises {
             this.id = id;
             this.name = name;
             this.formation_year = formation_year;
-            this.official_language= official_language;
+            //this.official_language= official_language;
             this.capital= capital;
             this.description=description;
             this.flag= flag;
